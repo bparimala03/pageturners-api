@@ -25,4 +25,8 @@ public class BookService {
 	public Books getBookById(Integer id) {
 		return bookRepository.findById(id).get();
 	}
+
+	public List<Books> getBookByCategory(Integer id) {
+		return bookRepository.findByCategoryId(id);
+	}
 }

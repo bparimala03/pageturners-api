@@ -15,6 +15,7 @@ import com.pageturners.service.BookService;
 
 @RestController
 public class BookController {
+	
 	@Autowired
 	BookService bookService;
 
@@ -26,5 +27,10 @@ public class BookController {
 	@RequestMapping(value = "/books/{id}")
 	public Books getBook(@PathVariable Integer id) {
 		return bookService.getBookById(id);
+	}
+	
+	@RequestMapping(value = "/books/category/{id}")
+	public List<Books> getBookByCategory(@PathVariable Integer id) {
+		return bookService.getBookByCategory(id);
 	}
 }
