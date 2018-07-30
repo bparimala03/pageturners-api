@@ -1,0 +1,30 @@
+ <br>
+    <div class=" container-fluid" style="background-color: white">
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" aria-current="page">Best Seller</li>
+              <a routerLink="/bestsellers"><h4 style="float:right ; padding-right: 5px">> View All</h4></a>
+            </ol>
+          </nav> 
+          <hr>
+      
+    <div class="row">
+      <div class="col-md-3" *ngFor="let books of bookList">
+        <div class=" thumbnail product-thumb">
+            <a routerLink="/books-details/{{ books.id}}" style="cursor: pointer">
+              <!-- <img src="../../assets/images/imageNotAvailable.jpg" alt="Lights" style="width:100%" > -->
+              <img src="{{books.imageUrl }}" alt="Lights" width="50%" class="img-fluid rounded">
+              <div class="product-brand"> 
+                <p>{{ books.name }}<br> <em> by {{ books.author }}</em></p>
+              </div>
+            </a>
+          <p>₹ {{ books.price }}</p>
+          <button type="button" class="btn btn-success" routerLink="/books-details/{{ books.id }}" style="cursor: pointer">
+            <span class="glyphicon glyphicon-plus-sign"></span> Add to cart
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
