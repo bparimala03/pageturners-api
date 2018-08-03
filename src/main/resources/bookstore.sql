@@ -10,13 +10,13 @@ CREATE TABLE IF NOT EXISTS bookstore.books (
   price varchar(255) DEFAULT NULL, 
   rating varchar(255) DEFAULT NULL, 
   rating_count varchar(255) DEFAULT NULL, 
-  PRIMARY KEY ('book_id') 
+  PRIMARY KEY (book_id) 
 );
 
 CREATE TABLE IF NOT EXISTS bookstore.categories ( 
   category_id int(11) NOT NULL, 
   name varchar(45) DEFAULT NULL, 
-  PRIMARY KEY ('category_id') 
+  PRIMARY KEY (category_id) 
 );
 
 DELETE FROM bookstore.categories;
